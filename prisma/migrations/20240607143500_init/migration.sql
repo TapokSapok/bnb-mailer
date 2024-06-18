@@ -1,0 +1,12 @@
+-- CreateTable
+CREATE TABLE "Queue" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "mail" TEXT NOT NULL
+);
+
+-- CreateTable
+CREATE TABLE "Message" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "to" TEXT NOT NULL,
+    "from" TEXT NOT NULL
+);

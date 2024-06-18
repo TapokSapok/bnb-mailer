@@ -1,5 +1,12 @@
 {
-	"from": "Mari Granda",
-	"subject": "Dear hotel",
-	"text": "Good afternoon, I need a room in your hotel for one person, preferably for June 11 with departure on June 14. Could you please give me information about standard rooms and their cost? I want to book one. Thank you"
+	"sendTimeout": 100,
+	"proxy": "",
+	"messages": [
+		{
+			"from": "Booking",
+			"subject": "Application: Booking Application ID: %RANDOM%",
+			"html": null,
+			"texts": ["1", "2", "3"]
+		}
+	]
 }
