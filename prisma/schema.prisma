@@ -14,6 +14,15 @@ model Queue {
 }
 
 model Account {
+  id String @id @unique
+  messageId Int? @unique
+  waitLink Boolean @default(false)
+  link String?
+  testMail String?  
+}
+
+model Message {
   id Int @id @default(autoincrement())
-  totalSent Int @default(0)
+  from String 
+  to String
 }

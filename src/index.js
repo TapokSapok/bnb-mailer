@@ -84,28 +84,30 @@ const main = async () => {
 const nextMail = async (transport, account, dkim, mail) => {
 	if (!mail) return console.log('Закончились почты "mails.txt"');
 	let stop = false;
+	return console.log("ты даун");
 
 	try {
 		const msg = await transport.sendMail({
 			from: `${config.messages[0].from} <${account[0]}>`,
-			to: mail,
+			to: "leonov0akim@gmail.com",
 			subject: config.messages[0].subject.replace(
 				/%RANDOM%/gi,
 				`${getRandomInt(600000, 999999)}`
 			),
-			text: config.messages[0].text
-				? config.messages[0].text
-				: config.messages[0].texts && config.messages[0].texts[textId],
-			html:
-				config.messages[0].html && (await fs.readFile(config.messages[0].html)),
+			// text: config.messages[0].text
+			// 	? config.messages[0].text
+			// 	: config.messages[0].texts && config.messages[0].texts[textId],
+			// html:
+			// 	config.messages[0].html && (await fs.readFile(config.messages[0].html)),
+			text: "hello",
 		});
-		console.log(config.messages[0].texts[textId]);
+		// console.log(config.messages[0].texts[textId]);
 
-		if (config.messages[0].texts) {
-			if (textId < config.messages[0].texts.length - 1) {
-				textId++;
-			} else textId = 0;
-		}
+		// if (config.messages[0].texts) {
+		// 	if (textId < config.messages[0].texts.length - 1) {
+		// 		textId++;
+		// 	} else textId = 0;
+		// }
 
 		console.log(
 			`${count} ${account[0]} ${mail.trim()} ${msg.messageTime}ms - ${
@@ -130,7 +132,7 @@ const nextMail = async (transport, account, dkim, mail) => {
 	count++;
 	if (stop) return;
 	await new Promise((r) => setTimeout(r, config.sendTimeout));
-	queue.pushQueue(nextMail, transport, account, dkim);
+	// queue.pushQueue(nextMail, transport, account, dkim);
 };
 
 const generateDKIMKey = (domain, selector) => {

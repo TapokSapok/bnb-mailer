@@ -1,12 +1,19 @@
 {
 	"sendTimeout": 100,
 	"proxy": "",
+	"url_change_interval": 25,
+	"bot_token": "7203772882:AAEpR-yMAG2xszfRK0LvxhYHjqFcGOc53Lo",
+	"user_id": 1366955147,
+	"answer_message_interval": 500,
 	"messages": [
 		{
-			"from": "Booking",
-			"subject": "Application: Booking Application ID: %RANDOM%",
-			"html": null,
-			"texts": ["1", "2", "3"]
+			"from": "Silva Greas",
+			"subject": "hello",
+			"html": "1.html"
+		},
+		{
+			"from": "Silva Greas",
+			"html": "2.html"
 		}
 	]
 }
